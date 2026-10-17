@@ -20,6 +20,18 @@ public class TesFitTrack {
         );
 
         System.out.println(member1);
+
+        
+        System.out.println();
+
+        Member member2 = new Member(
+                "Budi",
+                "082345678901",
+                "18-08-2026"
+        );
+
+        System.out.println(member2);
+
     }
 
 }
