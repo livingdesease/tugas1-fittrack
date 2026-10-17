@@ -32,6 +32,18 @@ public class TesFitTrack {
 
         System.out.println(member2);
 
+        
+        System.out.println();
+
+        Member member3 = new Member(
+                "Citra",
+                "083456789012",
+                "19-08-2026",
+                "VIP"
+        );
+
+        System.out.println(member3);
+
     }
 
 }
