@@ -141,4 +141,18 @@ public class Member {
         this(nama, noTelepon, tanggalDaftar, "Basic");
     }
 
+    
+    /**
+     * Mengubah data member menjadi teks yang mudah dibaca.
+     *
+     * @return seluruh data member dalam format teks
+     */
+    @Override
+    public String toString() {
+        return "Nama: " + nama
+                + "\nNomor Telepon: " + noTelepon
+                + "\nTanggal Daftar: " + tanggalDaftar
+                + "\nJenis Paket: " + jenisPaket;
+    }
+
 }
