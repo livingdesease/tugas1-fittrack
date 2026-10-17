@@ -4,10 +4,10 @@
  */
 public class Member {
 
-    private String nama;
-    private String noTelepon;
-    private String tanggalDaftar;
-    private String jenisPaket;
+    private String nama = "Belum diisi";
+    private String noTelepon = "0000000000";
+    private String tanggalDaftar = "Belum diisi";
+    private String jenisPaket = "Basic";
 
     /**
      * Mengubah nama member jika nama tidak kosong.
@@ -110,6 +110,23 @@ public class Member {
      */
     public String getJenisPaket() {
         return jenisPaket;
+    }
+
+    
+    /**
+     * Membuat objek member dengan seluruh data.
+     *
+     * @param nama nama member
+     * @param noTelepon nomor telepon member
+     * @param tanggalDaftar tanggal pendaftaran member
+     * @param jenisPaket jenis paket keanggotaan
+     */
+    public Member(String nama, String noTelepon,
+                  String tanggalDaftar, String jenisPaket) {
+        setNama(nama);
+        setNoTelepon(noTelepon);
+        setTanggalDaftar(tanggalDaftar);
+        setJenisPaket(jenisPaket);
     }
 
 }
