@@ -83,4 +83,33 @@ public class Member {
         return tanggalDaftar;
     }
 
+    
+    /**
+     * Mengubah jenis paket member.
+     * Jika paket tidak sesuai pilihan, paket diatur menjadi Basic.
+     *
+     * @param jenisPaket jenis paket yang dipilih member
+     */
+    public void setJenisPaket(String jenisPaket) {
+        if ("Basic".equals(jenisPaket)
+                || "Premium".equals(jenisPaket)
+                || "VIP".equals(jenisPaket)) {
+            this.jenisPaket = jenisPaket;
+        } else {
+            this.jenisPaket = "Basic";
+            System.out.println(
+                    "Jenis paket tidak valid. Paket diatur menjadi Basic."
+            );
+        }
+    }
+
+    /**
+     * Mengambil jenis paket member.
+     *
+     * @return jenis paket member
+     */
+    public String getJenisPaket() {
+        return jenisPaket;
+    }
+
 }
