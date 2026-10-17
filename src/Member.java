@@ -4,10 +4,16 @@
  */
 public class Member {
 
+    
+    private static final int MIN_PANJANG_TELEPON = 10;
+    private static final String PAKET_BASIC = "Basic";
+    private static final String PAKET_PREMIUM = "Premium";
+    private static final String PAKET_VIP = "VIP";
+
     private String nama = "Belum diisi";
     private String noTelepon = "0000000000";
     private String tanggalDaftar = "Belum diisi";
-    private String jenisPaket = "Basic";
+    private String jenisPaket = PAKET_BASIC;
 
     /**
      * Mengubah nama member jika nama tidak kosong.
@@ -40,7 +46,7 @@ public class Member {
     public void setNoTelepon(String noTelepon) {
         if (noTelepon != null
                 && noTelepon.startsWith("0")
-                && noTelepon.length() >= 10) {
+                && noTelepon.length() >= MIN_PANJANG_TELEPON) {
             this.noTelepon = noTelepon;
         } else {
             System.out.println(
@@ -90,13 +96,14 @@ public class Member {
      *
      * @param jenisPaket jenis paket yang dipilih member
      */
+
     public void setJenisPaket(String jenisPaket) {
-        if ("Basic".equals(jenisPaket)
-                || "Premium".equals(jenisPaket)
-                || "VIP".equals(jenisPaket)) {
+        if (PAKET_BASIC.equals(jenisPaket)
+                || PAKET_PREMIUM.equals(jenisPaket)
+                || PAKET_VIP.equals(jenisPaket)) {
             this.jenisPaket = jenisPaket;
         } else {
-            this.jenisPaket = "Basic";
+            this.jenisPaket = PAKET_BASIC;
             System.out.println(
                     "Jenis paket tidak valid. Paket diatur menjadi Basic."
             );
@@ -121,8 +128,7 @@ public class Member {
      * @param tanggalDaftar tanggal pendaftaran member
      * @param jenisPaket jenis paket keanggotaan
      */
-    public Member(String nama, String noTelepon,
-                  String tanggalDaftar, String jenisPaket) {
+    public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
         setNama(nama);
         setNoTelepon(noTelepon);
         setTanggalDaftar(tanggalDaftar);
@@ -138,7 +144,7 @@ public class Member {
      * @param tanggalDaftar tanggal pendaftaran member
      */
     public Member(String nama, String noTelepon, String tanggalDaftar) {
-        this(nama, noTelepon, tanggalDaftar, "Basic");
+        this(nama, noTelepon, tanggalDaftar, PAKET_BASIC);
     }
 
     
